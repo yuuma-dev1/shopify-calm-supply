@@ -1,0 +1,12 @@
+<section class="collection-section">
+  <div class="section-header">
+    <h1 class="page-title">{{ collection.title | default: '商品一覧' }}</h1>
+    <p class="section-lead">日常にやさしくなじむ、シンプルな雑貨を集めました。</p>
+  </div>
+
+  <div class="products-grid">
+    {% for product in collection.products %}
+      {% render 'product-card', product: product %}
+    {% endfor %}
+  </div>
+</section>

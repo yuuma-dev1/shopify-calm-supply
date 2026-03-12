@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "store_tagline",
+        "label": "Store tagline",
+        "default": "Minimal goods for calm living"
+      }
+    ]
+  }
+]

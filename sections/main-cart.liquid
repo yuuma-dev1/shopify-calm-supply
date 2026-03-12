@@ -1,0 +1,66 @@
+<section class="cart-page">
+  <div class="cart-inner">
+    <h1 class="page-title">Your Cart</h1>
+
+    {% if cart.item_count > 0 %}
+      
+        <ul class="cart-list">
+
+          {% for item in cart.items %}
+            <li class="cart-item">
+
+              <div class="cart-item-image">
+                {% if item.image %}
+                  {{ item.image | image_url: width: 140 | image_tag: alt: item.product.title }}
+                {% endif %}
+              </div>
+
+              <div class="cart-item-content">
+                <h2 class="cart-item-title">{{ item.product.title }}</h2>
+
+                <p class="cart-item-meta">
+                  数量: {{ item.quantity }}
+                </p>
+
+                <p class="cart-item-price">
+                  {{ item.final_line_price | money }}
+                </p>
+
+                <form method="post" action="{{ routes.cart_change_url }}" class="cart-remove-form">
+                  <input type="hidden" name="line" value="{{ forloop.index }}">
+                  <input type="hidden" name="quantity" value="0">
+
+                  <button type="submit" class="cart-remove">
+                    削除
+                  </button>
+                </form>
+
+              </div>
+
+            </li>
+          {% endfor %}
+
+        </ul>
+
+        <div class="cart-summary">
+          <p class="cart-total">
+            Total: {{ cart.total_price | money }}
+          </p>
+
+          <a href="/checkout" class="add-to-cart">
+            Checkout
+          </a>
+        </div>
+
+      
+
+    {% else %}
+
+      <p class="cart-empty">
+        カートは空です。
+      </p>
+
+    {% endif %}
+
+  </div>
+</section>

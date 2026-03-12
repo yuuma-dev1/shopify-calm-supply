@@ -1,0 +1,25 @@
+<section class="product-page">
+  <div class="product-page-image">
+    {% if product.featured_image %}
+      {{ product.featured_image | image_url: width: 900 | image_tag: alt: product.title }}
+    {% endif %}
+  </div>
+
+  <div class="product-page-info">
+    <p class="product-page-label">PRODUCT</p>
+    <h1 class="product-page-title">{{ product.title }}</h1>
+
+    <div class="product-page-price">
+      {{ product.price | money }}
+    </div>
+
+    <div class="product-page-description">
+      {{ product.description }}
+    </div>
+
+    <form method="post" action="/cart/add" class="product-form">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <button class="add-to-cart" type="submit">カートに追加</button>
+    </form>
+  </div>
+</section>
