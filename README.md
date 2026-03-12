@@ -1,6 +1,5 @@
-![Calm Supply](image.png)
 # Calm Supply – Shopifyカスタムテーマ
-
+![Calm Supply](image.png)
 Shopifyのテーマ構造（Liquid）を使って作成した、ミニマルなオンラインストアです。  
 商品一覧、商品ページ、カート機能など、ECサイトの基本機能を自作テーマで実装しています。
 
