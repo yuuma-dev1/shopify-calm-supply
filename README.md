@@ -45,3 +45,18 @@ Liquid・HTML・CSS・JavaScriptを使って実装しました。
 ---
 
 ## テーマ構成
+
+
+assets/
+config/
+layout/
+sections/
+snippets/
+templates/
+
+
+---
+
+## 作者
+
+Yuuma
